@@ -10,11 +10,11 @@ class Frontend extends CI_Controller {
 
     //INDEX FRONTEND
     function index() {
-        $data['data_about'] = $this->web_model->data_about();
-        $data['data_logo'] = $this->web_model->data_logo();
-        $data['data_blog_home'] = $this->web_model->data_blog_home();
-        $data['data_footer'] = $this->web_model->data_footer();
-        $data['data_portofolio_home'] = $this->web_model->data_portofolio_home();
+        $data['data_about'] = $this->Web_model->data_about();
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_blog_home'] = $this->Web_model->data_blog_home();
+        $data['data_footer'] = $this->Web_model->data_footer();
+        $data['data_portofolio_home'] = $this->Web_model->data_portofolio_home();
         $data['active_menu'] = 'home';
         $this->load->view('frontend/bg_frontend_home_header', $data);
         $this->load->view('frontend/bg_frontend_home_index', $data);
@@ -23,21 +23,23 @@ class Frontend extends CI_Controller {
 
     //PORTOFOLIO
     function portofolio() {
-        $data['data_portofolio_kategori'] = $this->web_model->data_portofolio_kategori();
-        $data['data_logo'] = $this->web_model->data_logo();
-        $data['data_footer'] = $this->web_model->data_footer();
-        $data['data_portofolio'] = $this->web_model->data_portofolio();
-        $this->load->view('frontend/bg_frontend_portofolio_header', $data);
+        $data['data_portofolio_kategori'] = $this->Web_model->data_portofolio_kategori();
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_footer'] = $this->Web_model->data_footer();
+        $data['data_portofolio'] = $this->Web_model->data_portofolio();
+//        $this->load->view('frontend/bg_frontend_portofolio_header', $data);
+        $this->load->view('frontend/bg_frontend_home_header', $data);
         $this->load->view('frontend/bg_frontend_portofolio_index', $data);
         $this->load->view('frontend/bg_frontend_home_footer', $data);
     }
 
     function portofolio_detail() {
         $id_portofolio = $this->uri->segment('3');
-        $data['data_logo'] = $this->web_model->data_logo();
-        $data['data_footer'] = $this->web_model->data_footer();
-        $data['data_portofolio_detail'] = $this->web_model->data_portofolio_detail($id_portofolio);
-        $this->load->view('frontend/bg_frontend_portofolio_header', $data);
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_footer'] = $this->Web_model->data_footer();
+        $data['data_portofolio_detail'] = $this->Web_model->data_portofolio_detail($id_portofolio);
+//        $this->load->view('frontend/bg_frontend_portofolio_header', $data);
+        $this->load->view('frontend/bg_frontend_home_header', $data);
         $this->load->view('frontend/bg_frontend_portofoliodetail_index', $data);
         $this->load->view('frontend/bg_frontend_home_footer', $data);
     }
@@ -45,11 +47,11 @@ class Frontend extends CI_Controller {
     //BLOG
 
     function blog() {
-        $data['data_blog_kategori'] = $this->web_model->data_blog_kategori();
-        $data['data_logo'] = $this->web_model->data_logo();
-        $data['data_footer'] = $this->web_model->data_footer();
+        $data['data_blog_kategori'] = $this->Web_model->data_blog_kategori();
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_footer'] = $this->Web_model->data_footer();
 
-        $jumlah = $this->web_model->blog_jumlah();
+        $jumlah = $this->Web_model->blog_jumlah();
 
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] = "</ul>";
@@ -70,8 +72,9 @@ class Frontend extends CI_Controller {
         $config['per_page'] = 2;   //limit nya brpp disini gans
         $dari = $this->uri->segment('3');
         $this->pagination->initialize($config);
-        $data['data_blog'] = $this->web_model->data_blog($config['per_page'], $dari);
-        $this->load->view('frontend/bg_frontend_blog_header', $data);
+        $data['data_blog'] = $this->Web_model->data_blog($config['per_page'], $dari);
+//        $this->load->view('frontend/bg_frontend_blog_header', $data);
+        $this->load->view('frontend/bg_frontend_home_header', $data);
         $this->load->view('frontend/bg_frontend_blog_index', $data);
         $this->load->view('frontend/bg_frontend_blog_sidebar', $data);
         $this->load->view('frontend/bg_frontend_home_footer', $data);
@@ -79,10 +82,10 @@ class Frontend extends CI_Controller {
 
     function blog_kategori() {
         $id_kat = $this->uri->segment('3');
-        $data['data_blog_kategori'] = $this->web_model->data_blog_kategori();
-        $data['data_logo'] = $this->web_model->data_logo();
-        $data['data_footer'] = $this->web_model->data_footer();
-        $jumlah = $this->web_model->blog_jumlah_kategori($id_kat);
+        $data['data_blog_kategori'] = $this->Web_model->data_blog_kategori();
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_footer'] = $this->Web_model->data_footer();
+        $jumlah = $this->Web_model->blog_jumlah_kategori($id_kat);
 
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] = "</ul>";
@@ -104,8 +107,9 @@ class Frontend extends CI_Controller {
         $config['per_page'] = 2;   //limit nya brpp disini gans
         $dari = $this->uri->segment('4');
         $this->pagination->initialize($config);
-        $data['data_blog_kategori_list'] = $this->web_model->data_blog_kategori_list($config['per_page'], $dari, $id_kat);
-        $this->load->view('frontend/bg_frontend_blog_header', $data);
+        $data['data_blog_kategori_list'] = $this->Web_model->data_blog_kategori_list($config['per_page'], $dari, $id_kat);
+//        $this->load->view('frontend/bg_frontend_blog_header', $data);
+        $this->load->view('frontend/bg_frontend_home_header', $data);
         $this->load->view('frontend/bg_frontend_blog_kategori', $data);
         $this->load->view('frontend/bg_frontend_blog_sidebar', $data);
 
@@ -114,11 +118,12 @@ class Frontend extends CI_Controller {
 
     function blog_detail() {
         $id_blog = $this->uri->segment('3');
-        $data['data_blog_kategori'] = $this->web_model->data_blog_kategori();
-        $data['data_logo'] = $this->web_model->data_logo();
-        $data['data_footer'] = $this->web_model->data_footer();
-        $data['data_blog_detail'] = $this->web_model->data_blog_detail($id_blog);
-        $this->load->view('frontend/bg_frontend_blog_header', $data);
+        $data['data_blog_kategori'] = $this->Web_model->data_blog_kategori();
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_footer'] = $this->Web_model->data_footer();
+        $data['data_blog_detail'] = $this->Web_model->data_blog_detail($id_blog);
+//        $this->load->view('frontend/bg_frontend_blog_header', $data);
+        $this->load->view('frontend/bg_frontend_home_header', $data);
         $this->load->view('frontend/bg_frontend_blogdetail_index', $data);
         $this->load->view('frontend/bg_frontend_blog_sidebar', $data);
         $this->load->view('frontend/bg_frontend_home_footer', $data);

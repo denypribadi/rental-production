@@ -6,17 +6,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <!-- PAGE TITLE -->
-    <title>Ultra | Company</title>
+    <title>Rental Multimedia</title>
     <!-- FAVICON AND APPLE TOUCHSCREEN ICONS -->
-    <link rel="shortcut icon" href="<?php echo base_url('Ultraviolet_GUI/Frontend/images/favicon.ico');?>">
+    <link rel="shortcut icon" href="<?php echo base_url('Ultraviolet_GUI/Frontend/images/fav.ico');?>">
     <link rel="apple-touch-icon" href="<?php echo base_url('Ultraviolet_GUI/Frontend/images/apple-touch-icon.html');?>">
 
-    <!-- ******************************
-            STYLESHEETS
-    *********************************** -->
-
-    <!-- DEFAULT AND BOOTSTRAP STYLESHEET -->
     <link rel="stylesheet" href="<?php echo base_url('Ultraviolet_GUI/Frontend/css/normalize.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('Ultraviolet_GUI/Frontend/css/bootstrap.min.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('Ultraviolet_GUI/Frontend/css/bootstrap-theme.min.css');?>">
@@ -47,15 +41,7 @@
 
     <!-- MODERNIZER -->
     <script src="<?php echo base_url('Ultraviolet_GUI/Frontend/js/modernizr-2.8.3.min.js');?>"></script>
-
-            
-    <!--[if lt IE 9]>
-        <script src="js/html5shiv.min.js"></script>
-        <script src="js/respond.min.js"></script>
-        <script src="js/selectivizr-min.js"></script>
-        <script src="js/nwmatcher.js"></script>
-        <script src="js/IE9.js"></script>       
-    <![endif]-->
+    
 </head>
 
 <body class="do-homepage-one">
@@ -82,14 +68,15 @@
                 <!-- LOGO -->
                 <div class="do-side-menu-logo-wrap">
                   <?php  foreach($data_logo->result() as $x); ?>
-                    <a href="index-2.html">
-                        <img src="<?php echo base_url('assets/company/logo/'.$x->logo.'');?>" alt="UltraCompany">
+                    <a href="<?php echo base_url(); ?>">
+                        <img src="<?php echo base_url('assets/company/logos/'.$x->logo.'');?>" alt="RentalMultimedia">
                     </a>
                 </div>
                 <!-- LOGO -->
 
                 <!-- MENU -->
-                <div class="do-side-menu-menu-wrap">
+                <!--<div class="do-side-menu-menu-wrap">-->
+                    <div class="hide">
                     <ul>
                         <li>
                             <a href="#">About</a>
