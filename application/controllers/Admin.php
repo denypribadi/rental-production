@@ -23,7 +23,7 @@ class Admin extends CI_Controller{
 	//INDEX ADMIN_AREA
 	function index(){
 		$this->load->view('admin/bg_header');
-		$data['id'] = $this->admin_model->all_id();
+		$data['id'] = $this->Admin_model->all_id();
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_index',$data);
 		$this->load->view('admin/bg_footer');
@@ -34,8 +34,8 @@ class Admin extends CI_Controller{
 	function about(){
 		$this->load->view('admin/bg_header');
 		$id_about=$this->uri->segment(3);
-		$data['id'] = $this->admin_model->all_id();
-		$data['data_about'] = $this->admin_model->data_about($id_about);
+		$data['id'] = $this->Admin_model->all_id();
+		$data['data_about'] = $this->Admin_model->data_about($id_about);
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_about',$data);
 		$this->load->view('admin/bg_footer');
@@ -45,8 +45,8 @@ class Admin extends CI_Controller{
 	function logo(){
 		$this->load->view('admin/bg_header');
 		$id_logo=$this->uri->segment(3);
-		$data['id'] = $this->admin_model->all_id();
-		$data['data_logo'] = $this->admin_model->data_logo($id_logo);
+		$data['id'] = $this->Admin_model->all_id();
+		$data['data_logo'] = $this->Admin_model->data_logo($id_logo);
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_logo',$data);
 		$this->load->view('admin/bg_footer');
@@ -56,8 +56,8 @@ class Admin extends CI_Controller{
 	function slider(){
 		$this->load->view('admin/bg_header');
 		$id_slider=$this->uri->segment(3);
-		$data['id'] = $this->admin_model->all_id();
-		$data['data_slider'] = $this->admin_model->data_slider($id_slider);
+		$data['id'] = $this->Admin_model->all_id();
+		$data['data_slider'] = $this->Admin_model->data_slider($id_slider);
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_slider',$data);
 		$this->load->view('admin/bg_footer');
@@ -68,8 +68,8 @@ class Admin extends CI_Controller{
 	function profile(){
 	    $this->load->view('admin/bg_header');
 		$id_profile=$this->uri->segment(3);
-		$data['id'] = $this->admin_model->all_id();
-		$data['data_profile'] = $this->admin_model->data_profile($id_profile);
+		$data['id'] = $this->Admin_model->all_id();
+		$data['data_profile'] = $this->Admin_model->data_profile($id_profile);
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_profile',$data);
 		$this->load->view('admin/bg_footer');
@@ -79,9 +79,9 @@ class Admin extends CI_Controller{
 //PORTOFOLIO
 	function portofolio(){
 		$this->load->view('admin/bg_header');
-		$data['id'] = $this->admin_model->all_id();
-		$data['kategori_portofolio']=$this->admin_model->kategori_portofolio();
-		$data['data_portofolio'] = $this->admin_model->data_portofolio();
+		$data['id'] = $this->Admin_model->all_id();
+		$data['kategori_portofolio']=$this->Admin_model->kategori_portofolio();
+		$data['data_portofolio'] = $this->Admin_model->data_portofolio();
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_portofolio',$data);
 		$this->load->view('admin/bg_footer');
@@ -91,10 +91,10 @@ class Admin extends CI_Controller{
 	function portofolio_edit(){
 		$id_portofolio=$this->uri->segment(3);
 	    $this->load->view('admin/bg_header');
-	    $data['id'] = $this->admin_model->all_id();
-		$data['id_portofolio'] = $this->admin_model->id_portofolio();
-		$data['kategori_portofolio']=$this->admin_model->kategori_portofolio();//tangkap id 
-		$data['data_portofolio_id'] = $this->admin_model->data_portofolio_id($id_portofolio);//where porto
+	    $data['id'] = $this->Admin_model->all_id();
+		$data['id_portofolio'] = $this->Admin_model->id_portofolio();
+		$data['kategori_portofolio']=$this->Admin_model->kategori_portofolio();//tangkap id 
+		$data['data_portofolio_id'] = $this->Admin_model->data_portofolio_id($id_portofolio);//where porto
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_portofolio_edit',$data);
 		$this->load->view('admin/bg_footer');
@@ -105,9 +105,9 @@ class Admin extends CI_Controller{
 	//BLOGG 
 	function blog(){
 	    $this->load->view('admin/bg_header');
-		$data['id'] = $this->admin_model->all_id();
-		$data['kategori_blog']=$this->admin_model->kategori_blog();
-		$data['data_blog'] = $this->admin_model->data_blog();
+		$data['id'] = $this->Admin_model->all_id();
+		$data['kategori_blog']=$this->Admin_model->kategori_blog();
+		$data['data_blog'] = $this->Admin_model->data_blog();
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_blog',$data);
 		$this->load->view('admin/bg_footer');
@@ -118,10 +118,10 @@ class Admin extends CI_Controller{
 	function blog_edit(){
 		$id_blog=$this->uri->segment(3);
 	    $this->load->view('admin/bg_header');
-	    $data['id'] = $this->admin_model->all_id();
-		$data['id_blog'] = $this->admin_model->id_blog();//tangkap id di form
-		$data['kategori_blog']=$this->admin_model->kategori_blog();
-		$data['data_blog_id'] = $this->admin_model->data_blog_id($id_blog);//where id_blog
+	    $data['id'] = $this->Admin_model->all_id();
+		$data['id_blog'] = $this->Admin_model->id_blog();//tangkap id di form
+		$data['kategori_blog']=$this->Admin_model->kategori_blog();
+		$data['data_blog_id'] = $this->Admin_model->data_blog_id($id_blog);//where id_blog
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_blog_edit',$data);
 		$this->load->view('admin/bg_footer');
@@ -156,8 +156,8 @@ class Admin extends CI_Controller{
 	function footer(){
 		$this->load->view('admin/bg_header');
 		$id_footer=$this->uri->segment(3);
-		$data['id'] = $this->admin_model->all_id();
-		$data['data_footer'] = $this->admin_model->data_footer($id_footer);
+		$data['id'] = $this->Admin_model->all_id();
+		$data['data_footer'] = $this->Admin_model->data_footer($id_footer);
 		$this->load->view('admin/bg_sidebar',$data);
 		$this->load->view('admin/bg_admin_footer',$data);
 		$this->load->view('admin/bg_footer');
