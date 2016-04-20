@@ -12,8 +12,6 @@ class Frontend extends CI_Controller {
     function index() {
         $data['data_about'] = $this->Web_model->data_about();
         $data['data_logo'] = $this->Web_model->data_logo();
-//        $data['data_blog_home'] = $this->Web_model->data_blog_home();
-        $data['data_paket_home'] = $this->Web_model->data_paket_home();
         $data['data_paket_home_header'] =  $this->Web_model->data_paket_header_home();
         $data['data_footer'] = $this->Web_model->data_footer();
         $data['data_portofolio_home'] = $this->Web_model->data_portofolio_home();

@@ -100,7 +100,8 @@ foreach ($data_about->result() as $tampil)
                                     <strong><?php echo $paket->nama_paket; ?></strong>
                                 </h3>
                                 <?php
-                                foreach ($data_paket_home->result() as $detail) {
+                                $detailpaket = $this->Web_model->data_paket_home($paket->id_paket);
+                                foreach ($detailpaket->result() as $detail) {
                                     if ($detail->id_paket == $paket->id_paket) {
                                         echo '<p># ' . $detail->nama_barang . ' --- ' . $detail->jumlah .' Unit(s)</p>';
                                     }
