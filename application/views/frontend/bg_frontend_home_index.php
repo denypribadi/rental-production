@@ -2,8 +2,10 @@
    CUSTOM SECTION  WITH IMAGE LEFT
 =================================-->
 <!--TAMPILKAN DATA ABOUT DARI DATABASE-->
-<?php foreach ($data_about->result() as $tampil)
-    ; ?>
+<?php
+foreach ($data_about->result() as $tampil)
+    ;
+?>
 <section class="do-custom-section-with-img">
     <div class="container">
         <div class="row">
@@ -61,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-<?php } ?>
+                <?php } ?>
 
 
             </div>
@@ -84,37 +86,33 @@
             <!-- SECTION HEADING -->
             <div class="do-section-heading">
                 <h1>PAKET</h1>
-
             </div>
             <!-- SECTION HEADING END -->
             <!-- BLOG WRAPPER -->
             <div class="do-blog-post-wrapper">
                 <?php
-                foreach ($data_blog_home->result() as $blog) {
-                    $c = array(' ');
-                    $d = array('-', '/', '\\', ',', '.', '#', ':', ';', '\'', '"', '[', ']', '{', '}', ')', '(', '|', '`', '~', '!', '@', '%', '$', '^', '&', '*', '=', '?', '+');
-                    $s = strtolower(str_replace($d, "", $blog->judul));
-                    $link = strtolower(str_replace($c, '-', $s));
-                    $isi = substr($blog->desc, 0, 10);
+                foreach ($data_paket_home_header->result() as $paket) {
                     ?>
-                    <!-- BLOG ITEMS -->
                     <div class="do-blog-masonry-items col-md-4 col-sm-4 col-xs-12">
                         <div class="do-blog-item-wrapper appear fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            <div class="do-blog-img-wrapper">
-                                <img src="<?php echo base_url('Assets/img_blog/' . $blog->gambar . ''); ?>" alt="ENDLESS ROAD STARTS">
-                                <div class="do-blog-post-date">
-                                    <p><?php echo $blog->date; ?></p>
-                                </div>
-                            </div>
                             <div class="do-blo-title-excerpt">
-                                <h3>
-                                    <a href="<?php echo base_url() . 'frontend/blog_detail/' . $blog->id_blog . '-' . $link . '.html'; ?>"><?php echo $blog->judul; ?></a>
+                                <h3 align="center">
+                                    <strong><?php echo $paket->nama_paket; ?></strong>
                                 </h3>
-                                <p><?php echo $isi; ?>...</p>
+                                <?php
+                                foreach ($data_paket_home->result() as $detail) {
+                                    if ($detail->id_paket == $paket->id_paket) {
+                                        echo '<p># ' . $detail->nama_barang . ' --- ' . $detail->jumlah .' Unit(s)</p>';
+                                    }
+                                }
+                                echo '<p><strong>Harga Rp. '. number_format( $paket->harga, 0 , '' , '.' ) .',-</strong></p>'
+                                ?>
                             </div>
                         </div>
-                    </div>
-<?php } ?>
+                    </div> 
+                    <?php
+                }
+                ?>
                 <!-- BLOG ITEMS END -->
 
 

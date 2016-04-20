@@ -964,7 +964,7 @@ BREADCUMB
     text-transform: uppercase;
     float: left;
     text-align: center;
-    width: 20%;
+    width: 33.33%;
     padding: 50px 0;
     border-right: 1px solid #333333;
     -webkit-transition: all .35s;
@@ -1032,9 +1032,9 @@ BREADCUMB
     background-color: #00aced;
 }
 
-/* VIMEO */
-.do-social-link-section a.do-vimeo:hover{
-    background-color: #aad450;
+/* INSTAGRAM */
+.do-social-link-section a.do-instagram:hover{
+    background-color: #9b6954;
 }
 
 /* DRIBBBLE */

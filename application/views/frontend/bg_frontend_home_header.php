@@ -163,7 +163,7 @@
                         </button>
 
                         <!-- Logo -->    
-                        <a class="navbar-brand" href="<?php echo base_url(); ?>;"><img class="logo" src="<?php echo base_url('assets/company/logo/' . $x->logo . ''); ?>" alt="DO"></a>
+                        <a class="navbar-brand" href="<?php echo base_url(); ?>"><img class="logo" src="<?php echo base_url('assets/company/logo/' . $x->logo . ''); ?>" alt="DO"></a>
 
                     </div>
                     <!-- Navbar Toggle End -->
@@ -174,10 +174,13 @@
                             <li <?php echo $active_menu == 'home' ? ' class="active"' : ''; ?>>
                                 <a href="<?php echo base_url(''); ?>">Home</a>
                             </li>
-                            <li <?php echo $active_menu == 'Product' ? ' class="active"' : ''; ?>>
-                                <a href="<?php echo base_url('frontend/blog'); ?>">Blog</a>
+                            <li <?php echo $active_menu == 'produk' ? ' class="active"' : ''; ?>>
+                                <a href="<?php echo base_url('frontend/blog'); ?>">Produk</a>
                             </li>
-                            <li <?php echo $active_menu == 'Portofolio' ? ' class="active"' : ''; ?>>
+                            <li <?php echo $active_menu == 'paket' ? ' class="active"' : ''; ?>>
+                                <a href="<?php echo base_url('frontend/blog'); ?>">Paket</a>
+                            </li>
+                            <li <?php echo $active_menu == 'portofolio' ? ' class="active"' : ''; ?>>
                                 <a href="<?php echo base_url('frontend/portofolio'); ?>">Portofolio</a>
                             </li>
                             <li <?php echo $active_menu == 'Order' ? ' class="active"' : ''; ?>>
