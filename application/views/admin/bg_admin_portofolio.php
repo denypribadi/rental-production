@@ -5,8 +5,8 @@
     <div class="content">
         <!-- Page Heading Start -->
         <div class="page-heading">
-            <h1><i class='fa fa-file'></i> Settings PORTOFOLIO Frontend</h1>
-            <h3> Settings PORTOFOLIO Frontend</h3>            	</div>
+            <h1><i class='fa fa-file'></i> Settings Portofolio</h1>
+            <h3> Settings Portofolio</h3>            	</div>
         <!-- Page Heading End-->				<!-- Page Heading End-->				<!-- Your awesome content goes here -->
         <div class="row">
             <div class="col-sm-6 portlets">
@@ -55,7 +55,7 @@
                                     <br>
                                     <br>
                                     <input type="submit" class="btn btn-default" name="upload" value="Save">
-<?php echo form_close(); ?>
+                                    <?php echo form_close(); ?>
                                 </div>
                             </div>
 
@@ -66,7 +66,7 @@
             <div class="col-md-12">
                 <div class="widget">
                     <div class="widget-header">
-                        <h2><strong> Settings BLOG Frontend</strong> </h2>
+                        <h2><strong> Settings Produk</strong> </h2>
                         <div class="additional-btn">
                             <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
                             <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -101,10 +101,10 @@
                                 </tfoot>
 
                                 <tbody>
-<?php
-foreach ($data_portofolio as $verlipost) {
-    $gambarporto = $verlipost->img_portofolio;
-    ?>
+                                    <?php
+                                    foreach ($data_portofolio as $verlipost) {
+                                        $gambarporto = $verlipost->img_portofolio;
+                                        ?>
 
 
                                         <tr>
@@ -123,7 +123,7 @@ foreach ($data_portofolio as $verlipost) {
 
                                         </tr>
 
-<?php } ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 

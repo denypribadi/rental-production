@@ -66,7 +66,7 @@
             <div class="col-md-12">
                 <div class="widget">
                     <div class="widget-header">
-                        <h2><strong> Settings BLOG Frontend</strong> </h2>
+                        <h2><strong> Settings Produk</strong> </h2>
                         <div class="additional-btn">
                             <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
                             <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>

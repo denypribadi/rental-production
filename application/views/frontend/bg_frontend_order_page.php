@@ -25,38 +25,80 @@
 </section>
 <!-- DO PAGE TITLE END -->
 
-<section class="do-blog-page-wrapper">
+<section class="do-portfolio-page-wrapper">
     <div class="container">
         <div class="row">
-            <div class="do-masonry-blog-wrapper col-md-8 col-sm-8 col-xs-12">
-                <?php
-                foreach ($data_paket_home_header->result() as $paket) {
-                    ?>
-                    <div class="do-blog-masonry-items col-md-4 col-sm-4 col-xs-12">
-                        <div class="do-blog-item-wrapper appear fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            <div class="do-blo-title-excerpt">
-                                <h3 align="center">
-                                    <strong><?php echo $paket->nama_paket; ?></strong>
-                                </h3>
-                                <?php
-                                $detailpaket = $this->Web_model->data_paket_home($paket->id_paket);
-                                foreach ($detailpaket->result() as $detail) {
-                                    if ($detail->id_paket == $paket->id_paket) {
-                                        echo '<p># ' . $detail->nama_barang . ' --- ' . $detail->jumlah . ' Unit(s)</p>';
-                                    }
-                                }
-                                echo '<p><strong>Harga Rp. ' . number_format($paket->harga, 0, '', '.') . ',-</strong></p>'
-                                ?>
-                            </div>
+            <!--ISI-->
+            <?php echo form_open('frontend/insertOrder'); ?>
+            <div class="widget-content padding">
+                <div class="form-horizontal">
+                    <div class="form-group has-warning">
+                        <label class="col-sm-2 control-label">Nama</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" id="" placeholder="Nama" name="nama">
                         </div>
-                    </div> 
-                    <?php
-                }
-                ?>
-            </div> 
-            <div class="do-blog-sidebar col-md-4 col-sm-4 col-xs-12">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Alamat</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" id="" placeholder="Alamat" name="alamat">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Kota</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" id="" placeholder="Kota" name="kota">
+                        </div>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label class="col-sm-2 control-label">No Handphone</label>
+                        <div class="col-xs-4">
+                            <input type="text" maxlength="15" class="form-control" id="" placeholder="No Handphone" name="nohp">
+                        </div>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-xs-4">
+                            <input type="email" class="form-control" id="" placeholder="Email" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Untuk Acara</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" id="" placeholder="Acara" name="acara">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Paket</label>
+                        <div class="col-xs-4">
+                            <select name="paket" class="form-control">
+                                <option>--Pilih Paket--</option>
+                                <?php
+                                foreach ($data_paket_home_header->result() as $paket) {
+                                    echo '<option value=' . $paket->id_paket . '>' . $paket->nama_paket . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Custom Item</label>
+                        <div class="col-xs-4">
+                            <textarea class="form-control" name="produk" placeholder="Custom Produk"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group"> 
+                        <div class="col-sm-offset-2 col-xs-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php echo form_close(); ?>
+            <!--ISI-->
+            <div id="do-portfolio-next-page-nav">
+                <a href="misc/portfolio-with-space-2.html"></a>
             </div>
         </div>
-        <?php // echo $this->pagination->create_links(); ?>  
     </div>
 </section>

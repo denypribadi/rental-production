@@ -147,6 +147,10 @@ class Frontend extends CI_Controller {
         $this->load->view('frontend/bg_frontend_order_page', $data);
         $this->load->view('frontend/bg_frontend_home_footer', $data);
     }
+    
+    function insertOrder(){
+        
+    }
 
 }
 
