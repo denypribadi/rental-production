@@ -137,6 +137,16 @@ class Frontend extends CI_Controller {
         $this->load->view('frontend/bg_frontend_paket_index', $data);
         $this->load->view('frontend/bg_frontend_home_footer', $data);
     }
+    
+    function orderPage(){
+        $data['data_logo'] = $this->Web_model->data_logo();
+        $data['data_footer'] = $this->Web_model->data_footer();
+        $data['data_paket_home_header'] =  $this->Web_model->data_paket_header_home(FALSE);
+        $data['active_menu'] = 'order';
+        $this->load->view('frontend/bg_frontend_home_header', $data);
+        $this->load->view('frontend/bg_frontend_order_page', $data);
+        $this->load->view('frontend/bg_frontend_home_footer', $data);
+    }
 
 }
 

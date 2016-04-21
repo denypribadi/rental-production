@@ -12,8 +12,8 @@ echo form_open_multipart('update_frontend/update_blog/' . $x->id_blog . '');
     <div class="content">
         <!-- Page Heading Start -->
         <div class="page-heading">
-            <h1><i class='fa fa-file'></i> Settings BLOG Frontend </h1>
-            <h3> Settings BLOG Frontend</h3>            	</div>
+            <h1><i class='fa fa-file'></i> Settings Produk </h1>
+            <h3> Settings Produk</h3>            	</div>
         <!-- Page Heading End-->				
         <!-- Page Heading End-->				
         <!-- Your awesome content goes here -->
@@ -22,7 +22,7 @@ echo form_open_multipart('update_frontend/update_blog/' . $x->id_blog . '');
                 <div class="widget">
                     <div class="widget-header transparent">
 
-                        <h2><strong>Input New</strong> BLOG</h2>
+                        <h2><strong>Input New</strong> Produk</h2>
                         <div class="additional-btn">
                             <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
                             <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -52,7 +52,7 @@ echo form_open_multipart('update_frontend/update_blog/' . $x->id_blog . '');
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Desc BLOG</label>
+                                <label class="col-sm-2 control-label">Desc Produk</label>
                                 <div class="col-sm-10">
                                     <textarea class="summernote" name="deskripsi_blog"><?php echo $x->desc; ?></textarea>
                                 </div>
@@ -66,7 +66,7 @@ echo form_open_multipart('update_frontend/update_blog/' . $x->id_blog . '');
                                     <br>
                                     <br>
                                     <input type="submit" class="btn btn-default" name="upload" value="Save">
-<?php echo form_close(); ?>
+                                    <?php echo form_close(); ?>
                                 </div>
                             </div>
 

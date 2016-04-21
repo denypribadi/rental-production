@@ -4,15 +4,16 @@
     <div class="content">
         <!-- Page Heading Start -->
         <div class="page-heading">
-            <h1><i class='fa fa-file'></i> Settings BLOG Frontend</h1>
-            <h3> Settings BLOG Frontend</h3>            	</div>
+            <h1><i class='fa fa-file'></i> Settings Produk</h1>
+            <h3> Settings Produk</h3>            	
+        </div>
         <!-- Page Heading End-->				<!-- Page Heading End-->				<!-- Your awesome content goes here -->
         <div class="row">
             <div class="col-sm-6 portlets">
                 <div class="widget">
                     <div class="widget-header transparent">
 
-                        <h2><strong>Input New</strong> BLOG</h2>
+                        <h2><strong>Input New</strong> Produk</h2>
                         <div class="additional-btn">
                             <a href="#" class="hidden reload"><i class="icon-ccw-1"></i></a>
                             <a href="#" class="widget-toggle"><i class="icon-down-open-2"></i></a>
@@ -42,7 +43,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">Desc BLOG</label>
+                                <label class="col-sm-2 control-label">Desc Produk</label>
                                 <div class="col-sm-10">
                                     <textarea class="summernote" name="deskripsi_blog"></textarea>
                                 </div>
@@ -54,7 +55,7 @@
                                     <br>
                                     <br>
                                     <input type="submit" class="btn btn-default" name="upload" value="Save">
-<?php echo form_close(); ?>
+                                    <?php echo form_close(); ?>
                                 </div>
                             </div>
 
@@ -101,36 +102,36 @@
 
                                 <tbody>
 
-<?php
-$no = 1;
-foreach ($data_blog as $verlipost) {
-    $gambarblog = $verlipost->gambar;
-    $status = $verlipost->status;
-    ?>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($data_blog as $datapost) {
+                                        $gambarblog = $datapost->gambar;
+                                        $status = $datapost->status;
+                                        ?>
 
 
                                         <tr>
                                             <td><?php echo $no++; ?>
-                                            <td><b><?php echo $verlipost->judul; ?></b></td>
-                                            <td><i>  <span class="label label-default"><?php echo $verlipost->kategori; ?></span></i></td>
-                                            <td><img src="<?php echo base_url('assets/img_blog/' . $verlipost->gambar . ''); ?>"height="80px"width="80px"></td>
+                                            <td><b><?php echo $datapost->judul; ?></b></td>
+                                            <td><i>  <span class="label label-default"><?php echo $datapost->kategori; ?></span></i></td>
+                                            <td><img src="<?php echo base_url('assets/img_blog/' . $datapost->gambar . ''); ?>"height="80px"width="80px"></td>
                                             <td><?php if ($status == '0') { ?>
                                                     <span class="label label-danger">Not Publish</span>
-    <?php } else if ($status == '1') { ?>
+                                                <?php } else if ($status == '1') { ?>
                                                     <span class="label label-success">Publsih</span>
                                                 <?php } ?>
                                             </td>
 
                                             <td>
                                                 <div class="btn-group btn-group-xs">
-                                                    <a href="<?php echo base_url('admin/blog_delete/' . $verlipost->id_blog . ''); ?>"data-toggle="tooltip" title="Delete" class="btn btn-default"><i class="fa fa-trash"></i></a>
-                                                    <a href="<?php echo base_url('admin/blog_edit/' . $verlipost->id_blog . ''); ?>" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-edit"></i></a>
+                                                    <a href="<?php echo base_url('admin/blog_delete/' . $datapost->id_blog . ''); ?>"data-toggle="tooltip" title="Delete" class="btn btn-default"><i class="fa fa-trash"></i></a>
+                                                    <a href="<?php echo base_url('admin/blog_edit/' . $datapost->id_blog . ''); ?>" data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-edit"></i></a>
                                                 </div>
                                             </td>
 
                                         </tr>
 
-<?php } ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 

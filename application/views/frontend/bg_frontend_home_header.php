@@ -183,8 +183,8 @@
                             <li <?php echo $active_menu == 'portofolio' ? ' class="active"' : ''; ?>>
                                 <a href="<?php echo base_url('frontend/portofolio'); ?>">Portofolio</a>
                             </li>
-                            <li <?php echo $active_menu == 'Order' ? ' class="active"' : ''; ?>>
-                                <a href="<?php echo base_url('frontend/order'); ?>">Order</a>
+                            <li <?php echo $active_menu == 'order' ? ' class="active"' : ''; ?>>
+                                <a href="<?php echo base_url('frontend/orderPage'); ?>">Order</a>
                             </li>
                         </ul>
                     </div>

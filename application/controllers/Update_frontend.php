@@ -281,4 +281,5 @@ class Update_frontend extends CI_Controller {
     }
 
 }
+
 ?>
