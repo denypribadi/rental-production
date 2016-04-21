@@ -178,7 +178,7 @@
                                 <a href="<?php echo base_url('frontend/blog'); ?>">Produk</a>
                             </li>
                             <li <?php echo $active_menu == 'paket' ? ' class="active"' : ''; ?>>
-                                <a href="<?php echo base_url('frontend/blog'); ?>">Paket</a>
+                                <a href="<?php echo base_url('frontend/paket'); ?>">Paket</a>
                             </li>
                             <li <?php echo $active_menu == 'portofolio' ? ' class="active"' : ''; ?>>
                                 <a href="<?php echo base_url('frontend/portofolio'); ?>">Portofolio</a>

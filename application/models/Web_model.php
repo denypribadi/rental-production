@@ -103,28 +103,27 @@ Class web_model extends CI_Model {
     }
 
 //BLOG--END
-    
 //    PAKET -- START
-    
-    function data_paket_home($idpaket){
+
+    function data_paket_home($idpaket) {
         $this->db->select('*');
         $this->db->from('m_paket_detail');
         $this->db->join('m_paket_header', 'm_paket_header.id_paket = m_paket_detail.id_paket');
         $this->db->join('m_barang', 'm_barang.id_barang = m_paket_detail.id_barang');
         $this->db->where('m_paket_detail.id_paket = ', $idpaket);
-        
+
         return $this->db->get();
-    }
-    
-    function data_paket_header_home(){
-        $this->db->select('*');
-        $this->db->from('m_paket_header');
-        $this->db->limit('3');
-        
-        return $this->db->get();
-        
     }
 
+    function data_paket_header_home($isHome) {
+        $this->db->select('*');
+        $this->db->from('m_paket_header');
+        if ($isHome == TRUE) {
+            $this->db->limit('3');
+        }
+
+        return $this->db->get();
+    }
 
 //    PAKET -- END
 }

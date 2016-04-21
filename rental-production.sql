@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2016-04-20 14:56:49
+Date: 2016-04-21 12:00:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -48,7 +48,7 @@ CREATE TABLE `m_paket_detail` (
   KEY `id_barang` (`id_barang`),
   CONSTRAINT `m_paket_detail_ibfk_1` FOREIGN KEY (`id_paket`) REFERENCES `m_paket_header` (`id_paket`),
   CONSTRAINT `m_paket_detail_ibfk_2` FOREIGN KEY (`id_barang`) REFERENCES `m_barang` (`id_barang`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_paket_detail
@@ -60,6 +60,12 @@ INSERT INTO `m_paket_detail` VALUES ('4', '2', '1', '2');
 INSERT INTO `m_paket_detail` VALUES ('5', '2', '3', '3');
 INSERT INTO `m_paket_detail` VALUES ('6', '3', '1', '1');
 INSERT INTO `m_paket_detail` VALUES ('7', '3', '3', '1');
+INSERT INTO `m_paket_detail` VALUES ('8', '4', '1', '1');
+INSERT INTO `m_paket_detail` VALUES ('9', '4', '2', '2');
+INSERT INTO `m_paket_detail` VALUES ('10', '5', '1', '2');
+INSERT INTO `m_paket_detail` VALUES ('11', '5', '3', '3');
+INSERT INTO `m_paket_detail` VALUES ('12', '6', '1', '1');
+INSERT INTO `m_paket_detail` VALUES ('13', '6', '3', '1');
 
 -- ----------------------------
 -- Table structure for m_paket_header
@@ -70,7 +76,7 @@ CREATE TABLE `m_paket_header` (
   `nama_paket` varchar(30) NOT NULL,
   `harga` decimal(19,2) DEFAULT NULL,
   PRIMARY KEY (`id_paket`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of m_paket_header
@@ -78,6 +84,9 @@ CREATE TABLE `m_paket_header` (
 INSERT INTO `m_paket_header` VALUES ('1', 'Paket A', '500000.00');
 INSERT INTO `m_paket_header` VALUES ('2', 'Paket B', '100000.00');
 INSERT INTO `m_paket_header` VALUES ('3', 'Paket C', '150000.00');
+INSERT INTO `m_paket_header` VALUES ('4', 'Paket D', '500000.00');
+INSERT INTO `m_paket_header` VALUES ('5', 'Paket E', '100000.00');
+INSERT INTO `m_paket_header` VALUES ('6', 'Paket F', '150000.00');
 
 -- ----------------------------
 -- Table structure for tb_admin
@@ -130,17 +139,18 @@ CREATE TABLE `tb_front_blog` (
   `pengirim` varchar(50) NOT NULL,
   `date` varchar(50) NOT NULL,
   `status` int(10) NOT NULL,
+  `harga` decimal(19,2) DEFAULT NULL,
   PRIMARY KEY (`id_blog`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_front_blog
 -- ----------------------------
-INSERT INTO `tb_front_blog` VALUES ('9', 'Ultraviolet developer Bandung', '<p><span style=\"line-height: 1.42857; font-weight: bold;\">Test bold, </span><span style=\"line-height: 1.42857; font-style: italic;\">Test Italic</span><span style=\"line-height: 1.42857;\"> </span><span style=\"line-height: 1.42857; text-decoration: underline;\">test underline</span><span style=\"line-height: 1.42857;\">  test table,</span><span style=\"line-height: 1.42857; font-family: \'Arial Black\';\"> test font arial black,d</span></p><p></p><div style=\"text-align: center;\"><span style=\"font-family: \'Arial Black\'; line-height: 26.6666px;\">dwadadawdada<span style=\"background-color: rgb(255, 255, 0);\">dawdadada</span></span></div>Pusing kepala gan<table class=\"table table-bordered\"><tbody><tr><td>senin</td><td>dsdwada</td><td>awdawdawdad</td><td>dawdadawdawdd</td></tr><tr><td>dwadaw</td><td><br></td><td><br></td><td>dwadadadadad</td></tr><tr><td><br></td><td><br></td><td><br></td><td><br></td></tr></tbody></table><p></p>', '1', 'blog-mas-img-1.jpg', 'VerlyAnanda', '2015-10-12', '1');
-INSERT INTO `tb_front_blog` VALUES ('10', 'Verly Test lagihgan', 'Verlytest', '2', 'blog-img-21.jpg', 'Verly ananda', '2015-10-11', '1');
-INSERT INTO `tb_front_blog` VALUES ('11', 'coba lagi gan', 'dwa', '2', 'blog-single-img.jpg', 'VerlyAnanda', '2015-10-11', '1');
-INSERT INTO `tb_front_blog` VALUES ('12', 'wakakaka', 'dwa', '2', 'blog-mas-img-2.jpg', 'VerlyAnanda', '2015-10-11', '1');
-INSERT INTO `tb_front_blog` VALUES ('13', 'Ultraviolet Developer', 'dawodwaokdoadoka', '2', 'custom-img-3.png', 'VerlyAnanda', '2015-10-12', '1');
+INSERT INTO `tb_front_blog` VALUES ('9', 'Proyektor 2200 Lumens', 'Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 2.200 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 2.200 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m', '1', 'sewa_lcd_projector_2200.jpg', 'Deny Setiawan', '2016-04-21', '1', '250000.00');
+INSERT INTO `tb_front_blog` VALUES ('10', 'Proyektor 3000 Lumens', 'Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 3.200 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 3.200 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m', '1', 'sewa_lcd_projector_3000.jpg', 'Arif Maruf', '2015-10-11', '1', '300000.00');
+INSERT INTO `tb_front_blog` VALUES ('11', 'Proyektor 5000 Lumens', 'Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 5.000 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 5.000 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m', '1', 'sewa_lcd_projector_5000.jpg', 'Tion Mulyadi', '2015-10-11', '1', '500000.00');
+INSERT INTO `tb_front_blog` VALUES ('12', 'Proyektor 10000 Lumens', 'Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 10.000 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m Sewa Infocus (Sewa Infokus) dengan tingkat resolusi dan kecerahan sebesar 10.000 ansi lumens, yang biasanya dipakai pada acara meeting (conference) untuk jumlah peserta (audience) antara 50 sampai dengan 100 orang. Sewa LCD jenis ini cocoknya dipadu dengan sewa Layar Projector berukuran 2x3m', '1', 'sewa_lcd_projector_10000.jpg', 'M Febrian', '2015-10-11', '1', '1000000.00');
+INSERT INTO `tb_front_blog` VALUES ('13', 'Screen Tripod 70\"', 'Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\" Screen Tripod 70\"', '2', 'screen_tripod_70-84.jpg', 'Tion Mulyadi', '2015-10-12', '1', '100000.00');
 
 -- ----------------------------
 -- Table structure for tb_front_footer
@@ -191,10 +201,10 @@ CREATE TABLE `tb_front_portofolio` (
 -- ----------------------------
 -- Records of tb_front_portofolio
 -- ----------------------------
-INSERT INTO `tb_front_portofolio` VALUES ('2', 'dowakdoadka', '3', 'Disney Corp', '<p>dokawodkawda</p>', 'counter.jpg');
-INSERT INTO `tb_front_portofolio` VALUES ('3', 'Apa aja gan', '3', 'Google', '<p>dkwoakdoadokawdkwaodka</p>', 'macbook-img.png');
-INSERT INTO `tb_front_portofolio` VALUES ('4', 'Web CV', '3', 'People', '<p>dwadadadawdadawdwada</p>', 'work-img-7.jpg');
-INSERT INTO `tb_front_portofolio` VALUES ('5', 'Verly test gan', '1', 'Human', '<p>dkwaokdoakdadokadkkdoakdoadkaoda</p>', 'tag.jpg');
+INSERT INTO `tb_front_portofolio` VALUES ('2', 'Margarets Secret', '1', 'Disney Corp', '<p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Di program aplikasi Microsoft Office Excel, Jika Anda memasukkan teks yang panjang di sebuah sel (cell), teks akan ditampilkan merentang melewati beberapa kolom. Apabila Anda kembali memasukkan teks yang panjang di sel yang terletak disebelah kanannya, teks pertama akan tertutupi. Teks akan tampil tidak lengkap dan mengaburkan arti dari teks itu sendiri.</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Sebenarnya Anda dapat menampilkan teks yang panjang di dalam sebuah sel Excel dengan menggunakan fitur Wrap teks. Teks akan dikemas atau ditampilkan menjadi beberapa baris secara otomatis di dalam sebuah sel Excel. Berikut ini adalah langkah-langkah untuk mengemas teks yang panjang agar diletakkan ke dalam sebuah sel Microsoft Office Excel 2010:</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Jalankan aplikasi Microsoft Office Excel 2010 dan ketikkan teks yang panjang ke dalam sebuah sel (cell) Excel. Aktifkan sel yang berisi teks tersebut dengan cara mengkliknya.</p>', 'portofolio7.jpg');
+INSERT INTO `tb_front_portofolio` VALUES ('3', 'Kalbe', '1', 'Kalbe', '<p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Di program aplikasi Microsoft Office Excel, Jika Anda memasukkan teks yang panjang di sebuah sel (cell), teks akan ditampilkan merentang melewati beberapa kolom. Apabila Anda kembali memasukkan teks yang panjang di sel yang terletak disebelah kanannya, teks pertama akan tertutupi. Teks akan tampil tidak lengkap dan mengaburkan arti dari teks itu sendiri.</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Sebenarnya Anda dapat menampilkan teks yang panjang di dalam sebuah sel Excel dengan menggunakan fitur Wrap teks. Teks akan dikemas atau ditampilkan menjadi beberapa baris secara otomatis di dalam sebuah sel Excel. Berikut ini adalah langkah-langkah untuk mengemas teks yang panjang agar diletakkan ke dalam sebuah sel Microsoft Office Excel 2010:</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Jalankan aplikasi Microsoft Office Excel 2010 dan ketikkan teks yang panjang ke dalam sebuah sel (cell) Excel. Aktifkan sel yang berisi teks tersebut dengan cara mengkliknya.</p>', 'portofolio8.jpg');
+INSERT INTO `tb_front_portofolio` VALUES ('4', 'Bank Mandiri', '1', 'Mandiri', '<p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Di program aplikasi Microsoft Office Excel, Jika Anda memasukkan teks yang panjang di sebuah sel (cell), teks akan ditampilkan merentang melewati beberapa kolom. Apabila Anda kembali memasukkan teks yang panjang di sel yang terletak disebelah kanannya, teks pertama akan tertutupi. Teks akan tampil tidak lengkap dan mengaburkan arti dari teks itu sendiri.</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Sebenarnya Anda dapat menampilkan teks yang panjang di dalam sebuah sel Excel dengan menggunakan fitur Wrap teks. Teks akan dikemas atau ditampilkan menjadi beberapa baris secara otomatis di dalam sebuah sel Excel. Berikut ini adalah langkah-langkah untuk mengemas teks yang panjang agar diletakkan ke dalam sebuah sel Microsoft Office Excel 2010:</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Jalankan aplikasi Microsoft Office Excel 2010 dan ketikkan teks yang panjang ke dalam sebuah sel (cell) Excel. Aktifkan sel yang berisi teks tersebut dengan cara mengkliknya.</p>', 'portofolio41.jpg');
+INSERT INTO `tb_front_portofolio` VALUES ('5', 'Konser Dewa 19', '2', 'BWI EO', '<p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Di program aplikasi Microsoft Office Excel, Jika Anda memasukkan teks yang panjang di sebuah sel (cell), teks akan ditampilkan merentang melewati beberapa kolom. Apabila Anda kembali memasukkan teks yang panjang di sel yang terletak disebelah kanannya, teks pertama akan tertutupi. Teks akan tampil tidak lengkap dan mengaburkan arti dari teks itu sendiri.</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Sebenarnya Anda dapat menampilkan teks yang panjang di dalam sebuah sel Excel dengan menggunakan fitur Wrap teks. Teks akan dikemas atau ditampilkan menjadi beberapa baris secara otomatis di dalam sebuah sel Excel. Berikut ini adalah langkah-langkah untuk mengemas teks yang panjang agar diletakkan ke dalam sebuah sel Microsoft Office Excel 2010:</p><p style=\"margin-top: 15px; margin-bottom: 15px; padding: 0px; border: 0px; color: rgb(85, 101, 111); font-family: Helvetica, Arial, sans-serif; font-size: 13.4px; line-height: 20.1px;\">Jalankan aplikasi Microsoft Office Excel 2010 dan ketikkan teks yang panjang ke dalam sebuah sel (cell) Excel. Aktifkan sel yang berisi teks tersebut dengan cara mengkliknya.</p>', 'portofolio.jpg');
 
 -- ----------------------------
 -- Table structure for tb_front_slider
@@ -239,13 +249,15 @@ CREATE TABLE `tb_kategori_blog` (
   `id_kategori_blog` int(10) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(50) NOT NULL,
   PRIMARY KEY (`id_kategori_blog`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_kategori_blog
 -- ----------------------------
-INSERT INTO `tb_kategori_blog` VALUES ('1', 'Web');
-INSERT INTO `tb_kategori_blog` VALUES ('2', 'Android');
+INSERT INTO `tb_kategori_blog` VALUES ('1', 'Proyektor');
+INSERT INTO `tb_kategori_blog` VALUES ('2', 'Screen');
+INSERT INTO `tb_kategori_blog` VALUES ('3', 'LED / Plasma');
+INSERT INTO `tb_kategori_blog` VALUES ('4', 'Sound System');
 
 -- ----------------------------
 -- Table structure for tb_kategori_portofolio
@@ -260,6 +272,5 @@ CREATE TABLE `tb_kategori_portofolio` (
 -- ----------------------------
 -- Records of tb_kategori_portofolio
 -- ----------------------------
-INSERT INTO `tb_kategori_portofolio` VALUES ('1', 'WebDesign');
-INSERT INTO `tb_kategori_portofolio` VALUES ('2', 'WebDeveloper');
-INSERT INTO `tb_kategori_portofolio` VALUES ('3', 'AndroidDeveloper');
+INSERT INTO `tb_kategori_portofolio` VALUES ('1', 'Seminar');
+INSERT INTO `tb_kategori_portofolio` VALUES ('2', 'Konser');
