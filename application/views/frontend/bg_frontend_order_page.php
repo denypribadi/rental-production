@@ -89,16 +89,13 @@
                     </div>
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-xs-4">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit And Send</button>
                         </div>
                     </div>
                 </div>
             </div>
             <?php echo form_close(); ?>
             <!--ISI-->
-            <div id="do-portfolio-next-page-nav">
-                <a href="misc/portfolio-with-space-2.html"></a>
-            </div>
         </div>
     </div>
 </section>

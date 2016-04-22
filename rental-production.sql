@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2016-04-21 12:00:35
+Date: 2016-04-22 16:28:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -267,10 +267,38 @@ CREATE TABLE `tb_kategori_portofolio` (
   `id_kategori_portofolio` int(10) NOT NULL AUTO_INCREMENT,
   `kategori_portofolio` varchar(50) NOT NULL,
   PRIMARY KEY (`id_kategori_portofolio`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_kategori_portofolio
 -- ----------------------------
 INSERT INTO `tb_kategori_portofolio` VALUES ('1', 'Seminar');
 INSERT INTO `tb_kategori_portofolio` VALUES ('2', 'Konser');
+
+-- ----------------------------
+-- Table structure for t_order
+-- ----------------------------
+DROP TABLE IF EXISTS `t_order`;
+CREATE TABLE `t_order` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `kota` varchar(50) DEFAULT NULL,
+  `nohp` varchar(17) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `acara` varchar(50) DEFAULT NULL,
+  `paket_header` int(2) unsigned DEFAULT NULL,
+  `custom_item` text,
+  `date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paket_header` (`paket_header`),
+  CONSTRAINT `t_order_ibfk_1` FOREIGN KEY (`paket_header`) REFERENCES `m_paket_header` (`id_paket`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of t_order
+-- ----------------------------
+INSERT INTO `t_order` VALUES ('1', 'Deny', 'Krukah', 'Surabaya', '085649123858', 'deny@test.com', 'meeting', '1', '123qwe', '2016-04-22 10:37:23');
+INSERT INTO `t_order` VALUES ('3', 'Deny', 'Krukah', 'Surabaya', '085649123858', 'deny@test.com', 'meeting', null, '123qwe', '2016-04-22 10:40:46');
+INSERT INTO `t_order` VALUES ('4', 'Dawam', 'asda', 'asdr', '23424qw4234', 'asd@sdfs.com', 'asda', '6', 'asda', '2016-04-22 11:02:28');
+INSERT INTO `t_order` VALUES ('5', 'Dawam', 'asda', 'asdr', '23424qw4234', 'asd@sdfs.com', 'asda', '6', 'asda', '2016-04-22 11:06:12');
